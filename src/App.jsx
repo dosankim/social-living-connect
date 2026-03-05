@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import MapSearch from './pages/MapSearch';
 import CommunityList from './pages/CommunityList';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/news" element={<News />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
