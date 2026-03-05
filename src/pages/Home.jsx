@@ -278,12 +278,9 @@ export default function Home() {
                                         <Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" />
                                     </div>
                                     <p className="review-text">"안암동 코리빙 하우스에서의 한 달, 제 삶이 긍정적으로 바뀌었어요. 퇴근 후 반겨주는 이웃이 있다는 게 이렇게 든든할 줄 몰랐습니다."</p>
-                                    <div className="review-author mt-4 flex items-center gap-3">
-                                        <div className="author-avatar bg-primary text-white">김</div>
-                                        <div>
-                                            <p className="font-bold text-sm">김*영 님</p>
-                                            <p className="text-xs text-secondary">안암동 코리빙 하우스 입주 3개월차</p>
-                                        </div>
+                                    <div className="review-author mt-6 pt-4 border-t border-[var(--color-border)]">
+                                        <p className="font-bold text-body text-gray-900 mb-1">김지영</p>
+                                        <p className="text-sm text-secondary">안암동 코리빙 하우스 • 입주 3개월차</p>
                                     </div>
                                 </div>
                                 <div className="review-card">
@@ -291,12 +288,9 @@ export default function Home() {
                                         <Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" />
                                     </div>
                                     <p className="review-text">"프리랜서라 하루종일 집에 있는데, 공용 라운지에서 작업하니 능률이 오릅니다. 필요한 구독 서비스나 공동구매 혜택도 쏠쏠해요!"</p>
-                                    <div className="review-author mt-4 flex items-center gap-3">
-                                        <div className="author-avatar" style={{ background: '#2D6A4F', color: 'white' }}>이</div>
-                                        <div>
-                                            <p className="font-bold text-sm">이*진 님</p>
-                                            <p className="text-xs text-secondary">연남동 예술인 다세대 입주 1년차</p>
-                                        </div>
+                                    <div className="review-author mt-6 pt-4 border-t border-[var(--color-border)]">
+                                        <p className="font-bold text-body text-gray-900 mb-1">이서진</p>
+                                        <p className="text-sm text-secondary">연남동 예술인 다세대 • 입주 1년차</p>
                                     </div>
                                 </div>
                                 <div className="review-card">
@@ -304,12 +298,9 @@ export default function Home() {
                                         <Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" />
                                     </div>
                                     <p className="review-text">"집주인과 직접 연락하지 않고, 이집넷 플랫폼을 통해 수리 요청이나 건의사항을 바로 해결할 수 있어서 무척 편리합니다."</p>
-                                    <div className="review-author mt-4 flex items-center gap-3">
-                                        <div className="author-avatar" style={{ background: '#4361EE', color: 'white' }}>박</div>
-                                        <div>
-                                            <p className="font-bold text-sm">박*서 님</p>
-                                            <p className="text-xs text-secondary">성산동 청년 공유주택 입주 6개월차</p>
-                                        </div>
+                                    <div className="review-author mt-6 pt-4 border-t border-[var(--color-border)]">
+                                        <p className="font-bold text-body text-gray-900 mb-1">박민서</p>
+                                        <p className="text-sm text-secondary">성산동 청년 공유주택 • 입주 6개월차</p>
                                     </div>
                                 </div>
                                 <div className="review-card">
@@ -317,12 +308,9 @@ export default function Home() {
                                         <Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" />
                                     </div>
                                     <p className="review-text">"입주 전에는 낯선 사람들과 화장실을 공유하는 게 걱정이었지만, 체계적인 청소 서비스와 룰 덕분에 오히려 일반 원룸보다 쾌적해요."</p>
-                                    <div className="review-author mt-4 flex items-center gap-3">
-                                        <div className="author-avatar" style={{ background: '#7209B7', color: 'white' }}>최</div>
-                                        <div>
-                                            <p className="font-bold text-sm">최*민 님</p>
-                                            <p className="text-xs text-secondary">안암동 코리빙 하우스 입주 2개월차</p>
-                                        </div>
+                                    <div className="review-author mt-6 pt-4 border-t border-[var(--color-border)]">
+                                        <p className="font-bold text-body text-gray-900 mb-1">최유리</p>
+                                        <p className="text-sm text-secondary">신도림 신혼부부 특화형 • 입주 2년차</p>
                                     </div>
                                 </div>
                             </React.Fragment>
