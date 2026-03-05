@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -102,13 +102,18 @@ export default function PropertyDetail() {
     const navigate = useNavigate();
     const [isFavorite, setIsFavorite] = useState(false);
 
+    // Scroll to top on mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
+
     // Default to item 1 if not found
     const property = MOCK_HOUSING_DETAILS[id] || MOCK_HOUSING_DETAILS[1];
 
     const toggleFavorite = () => setIsFavorite(!isFavorite);
 
     return (
-        <div className="property-detail-page pb-24">
+        <div className="property-detail-page">
             {/* Top Navigation */}
             <div className="property-top-nav">
                 <button className="icon-btn" onClick={() => navigate(-1)}>
@@ -143,53 +148,51 @@ export default function PropertyDetail() {
             </section>
 
             {/* Main Info */}
-            <section className="property-section pb-2 border-b-section">
-                <div className="container">
-                    <div className="flex items-center gap-2 mb-2">
-                        <span className="badge badge-green"><CheckCircle2 size={12} /> 실시간 확인</span>
-                        <span className="text-sm text-secondary">{property.type}</span>
-                    </div>
+            <section className="property-section border-b-section">
+                <div className="property-badge-row flex items-center gap-2">
+                    <span className="badge badge-green"><CheckCircle2 size={14} /> 실시간 확인</span>
+                    <span className="text-sm text-secondary">{property.type}</span>
+                </div>
 
-                    <h1 className="text-h2 font-bold mb-4">
-                        월세 <span className="text-primary">{property.deposit} / {property.rent}</span>
-                    </h1>
+                <h1 className="text-h1 property-price-title">
+                    월세 <span className="text-primary">{property.deposit} / {property.rent}</span>
+                </h1>
 
-                    <div className="property-title-row flex justify-between items-start mb-6">
-                        <h2 className="text-h3 font-medium">{property.title}</h2>
-                    </div>
+                <div className="property-title-row">
+                    <h2 className="text-h3 font-medium">{property.title}</h2>
+                </div>
 
-                    <div className="property-tags flex flex-wrap gap-2 mb-6">
-                        {property.tags.map(tag => (
-                            <span key={tag} className="property-tag">#{tag}</span>
-                        ))}
-                    </div>
+                <div className="property-tags">
+                    {property.tags.map(tag => (
+                        <span key={tag} className="property-tag">#{tag}</span>
+                    ))}
+                </div>
 
-                    <div className="info-grid overflow-hidden rounded-xl border border-[var(--color-border)] mb-4">
-                        <div className="info-row flex border-b border-[var(--color-border)]">
-                            <div className="info-col flex-1 p-3 border-r border-[var(--color-border)]">
-                                <div className="text-xs text-secondary mb-1 flex items-center gap-1"><Maximize size={14} /> 전용면적</div>
-                                <div className="font-medium">{property.area}</div>
-                            </div>
-                            <div className="info-col flex-1 p-3">
-                                <div className="text-xs text-secondary mb-1 flex items-center gap-1"><Layers size={14} /> 해당/총층</div>
-                                <div className="font-medium">{property.floor}</div>
-                            </div>
+                <div className="info-grid">
+                    <div className="info-row">
+                        <div className="info-col border-r">
+                            <div className="info-label"><Maximize size={16} /> 전용면적</div>
+                            <div className="info-value">{property.area}</div>
                         </div>
-                        <div className="info-row flex border-b border-[var(--color-border)]">
-                            <div className="info-col flex-1 p-3 border-r border-[var(--color-border)]">
-                                <div className="text-xs text-secondary mb-1 flex items-center gap-1"><Car size={14} /> 주차가능여부</div>
-                                <div className="font-medium">{property.parking}</div>
-                            </div>
-                            <div className="info-col flex-1 p-3">
-                                <div className="text-xs text-secondary mb-1 flex items-center gap-1"><Building size={14} /> 엘리베이터</div>
-                                <div className="font-medium">{property.elevator}</div>
-                            </div>
+                        <div className="info-col">
+                            <div className="info-label"><Layers size={16} /> 해당/총층</div>
+                            <div className="info-value">{property.floor}</div>
                         </div>
-                        <div className="info-row flex bg-[var(--color-surface)]">
-                            <div className="info-col w-full p-3">
-                                <div className="text-xs text-secondary mb-1 flex items-center gap-1"><Calendar size={14} /> 입주가능일</div>
-                                <div className="font-medium text-primary">{property.moveInDate}</div>
-                            </div>
+                    </div>
+                    <div className="info-row">
+                        <div className="info-col border-r">
+                            <div className="info-label"><Car size={16} /> 주차가능</div>
+                            <div className="info-value">{property.parking}</div>
+                        </div>
+                        <div className="info-col">
+                            <div className="info-label"><Building size={16} /> 승강기</div>
+                            <div className="info-value">{property.elevator}</div>
+                        </div>
+                    </div>
+                    <div className="info-row">
+                        <div className="info-col">
+                            <div className="info-label"><Calendar size={16} /> 입주가능일</div>
+                            <div className="info-value text-primary font-bold">{property.moveInDate}</div>
                         </div>
                     </div>
                 </div>
@@ -197,63 +200,59 @@ export default function PropertyDetail() {
 
             {/* Additional Info Box */}
             <section className="property-section border-b-section">
-                <div className="container">
-                    <div className="operator-card p-4 rounded-xl border border-[var(--color-border)] flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                            <div className="operator-logo w-12 h-12 bg-white rounded-full border border-gray-100 flex items-center justify-center shadow-sm">
-                                <ShieldCheck className="text-primary" size={24} />
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-base mb-1">{property.operator}</h3>
-                                <p className="text-sm text-secondary flex items-center gap-1">
-                                    <CheckCircle2 size={12} className="text-green-500" />
-                                    인증된 소셜 리빙 운영사
-                                </p>
-                            </div>
+                <div className="operator-card">
+                    <div className="operator-info">
+                        <div className="operator-logo">
+                            <ShieldCheck className="text-primary" size={26} />
                         </div>
-                        <button className="text-primary bg-primary/10 hover:bg-primary/20 p-2 rounded-lg transition-colors">
-                            <Info size={20} />
-                        </button>
+                        <div>
+                            <h3 className="operator-name">{property.operator}</h3>
+                            <p className="operator-badge">
+                                <CheckCircle2 size={14} color="#20C997" />
+                                인증된 소셜 리빙 운영사
+                            </p>
+                        </div>
                     </div>
+                    <button className="operator-action">
+                        <Info size={24} />
+                    </button>
                 </div>
             </section>
 
             {/* Description */}
             <section className="property-section border-b-section">
-                <div className="container">
-                    <h3 className="text-h3 font-bold mb-4">상세 설명</h3>
-                    <div className="description-content text-body text-[var(--color-text)] whitespace-pre-wrap leading-relaxed">
-                        {property.description}
-                    </div>
+                <h3 className="text-h3 font-bold section-heading">상세 설명</h3>
+                <div className="description-content">
+                    {property.description}
                 </div>
             </section>
 
             {/* Location (Map Placeholder) */}
             <section className="property-section border-b-section">
-                <div className="container">
-                    <h3 className="text-h3 font-bold mb-4">위치</h3>
-                    <div className="flex items-start gap-2 mb-4">
-                        <MapPin className="text-secondary shrink-0 mt-0.5" size={18} />
-                        <div>
-                            <p className="font-medium">{property.address}</p>
-                            <p className="text-sm text-secondary">주변 편의시설을 확인해보세요</p>
-                        </div>
+                <h3 className="text-h3 font-bold section-heading">위치</h3>
+                <div className="location-row">
+                    <MapPin className="text-secondary" size={20} style={{ marginTop: '2px' }} />
+                    <div>
+                        <p className="location-address">{property.address}</p>
+                        <p className="location-desc">주변 편의시설을 확인해보세요</p>
                     </div>
-                    <div className="property-map-placeholder rounded-xl bg-gray-100 h-[200px] flex flex-col items-center justify-center border border-[var(--color-border)] overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
-                        <img src="/images/hero_modern_coliving.png" alt="map context" className="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-[2px]" />
-                        <MapPin size={32} className="text-primary mb-2 relative z-10" />
-                        <span className="font-bold relative z-10 text-gray-800 flex items-center gap-1">지도에서 보기 <ArrowUpRight size={16} /></span>
+                </div>
+                <div className="property-map-placeholder">
+                    <img src="/images/hero_modern_coliving.png" alt="map context" />
+                    <div className="map-overlay-content">
+                        <MapPin size={36} className="text-primary" />
+                        <span className="map-link-text">지도에서 보기 <ArrowUpRight size={18} /></span>
                     </div>
                 </div>
             </section>
 
             {/* Sticky Bottom Action Bar */}
-            <div className="property-action-bar fixed bottom-0 left-0 right-0 bg-white border-t border-[var(--color-border)] p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 flex items-center gap-3">
-                <button className="action-btn flex-1 bg-white border border-primary text-primary font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors">
-                    <MessageSquare size={18} /> 문의하기
+            <div className="property-action-bar">
+                <button className="action-btn action-btn-outline">
+                    <MessageSquare size={20} /> 문의하기
                 </button>
-                <button className="action-btn flex-1 bg-primary text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-[0_4px_12px_rgba(253,93,93,0.3)]">
-                    <Phone size={18} fill="currentColor" /> 전화 상담
+                <button className="action-btn action-btn-primary">
+                    <Phone size={20} fill="currentColor" /> 전화 상담
                 </button>
             </div>
         </div>
