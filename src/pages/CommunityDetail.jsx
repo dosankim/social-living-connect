@@ -51,8 +51,8 @@ export default function CommunityDetail() {
                     {/* Header Section */}
                     <div className="detail-header pb-6 border-b border-[var(--color-border)] mb-8">
                         <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="badge badge-orange">원데이클래스</span>
-                            <span className="badge badge-green"><CheckCircle2 size={12} /> 입주자 인증 할인</span>
+                            <span className="badge badge-orange inline-flex items-center px-2 py-1">원데이클래스</span>
+                            <span className="badge badge-green inline-flex items-center px-2 py-1"><CheckCircle2 size={12} /> 입주자 인증 할인</span>
                         </div>
                         <h1 className="text-h1 mb-4 leading-tight">봄맞이 아늑한 공간, 라탄 공예 원데이 클래스</h1>
                         <p className="text-body text-secondary mb-0 leading-relaxed">
@@ -214,15 +214,17 @@ export default function CommunityDetail() {
             </div>
 
             {/* Mobile Sticky Bottom Bar (Visible only on mobile) */}
-            <div className="mobile-action-bar fixed bottom-0 left-0 right-0 bg-white border-t border-[var(--color-border)] p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-50 md:hidden block">
-                <div className="flex items-center gap-4">
-                    <div className="mobile-price-col flex flex-col justify-center">
-                        <span className="text-xs text-primary font-bold line-through opacity-70">35,000원</span>
-                        <span className="text-xl font-bold text-gray-900 leading-none">15,000<span className="text-sm font-normal">원</span></span>
+            <div className="mobile-action-bar-wrapper">
+                <div className="mobile-action-bar fixed bottom-0 left-0 right-0 bg-white border-t border-[var(--color-border)] p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-50">
+                    <div className="flex items-center gap-4">
+                        <div className="mobile-price-col flex flex-col justify-center">
+                            <span className="text-xs text-primary font-bold line-through opacity-70">35,000원</span>
+                            <span className="text-xl font-bold text-gray-900 leading-none">15,000<span className="text-sm font-normal">원</span></span>
+                        </div>
+                        <button className="btn btn-primary flex-1 py-3.5 text-base font-bold rounded-xl shadow-[0_4px_12px_rgba(253,93,93,0.3)]">
+                            참가 신청하기
+                        </button>
                     </div>
-                    <button className="btn btn-primary flex-1 py-3.5 text-base font-bold rounded-xl shadow-[0_4px_12px_rgba(253,93,93,0.3)]">
-                        참가 신청하기
-                    </button>
                 </div>
             </div>
 

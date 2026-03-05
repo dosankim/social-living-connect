@@ -1,5 +1,5 @@
 .community-detail-page {
-    background: var(--color-background);
+    background: var(--color-surface);
     min-height: calc(100vh - 72px);
     position: relative;
     padding-bottom: 20px;
@@ -40,7 +40,8 @@
 
 .event-banner-wrapper {
     width: 100%;
-    height: 440px;
+    height: 480px;
+    /* Taller banner to anchor the page better */
     position: relative;
 }
 
@@ -51,7 +52,8 @@
     left: 0;
     right: 0;
     height: 40%;
-    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(248, 249, 250, 1) 0%, transparent 100%);
+    /* Match surface color instead of white */
     z-index: 1;
 }
 
@@ -64,19 +66,24 @@
 .detail-layout {
     display: flex;
     gap: 40px;
-    margin-top: -100px;
-    /* Overlap image significantly */
+    max-width: 1100px;
+    margin: -140px auto 0;
+    /* Centered, overlap image significantly */
     position: relative;
     z-index: 10;
     align-items: flex-start;
+    padding: 0 24px;
 }
 
 .detail-main {
     flex: 1;
+    min-width: 0;
+    /* Prevent flex blowout */
     background: white;
-    padding: 10px 0 40px;
-    max-width: 720px;
-    /* Match typical article width */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    padding: 40px;
+    border: 1px solid var(--color-border);
 }
 
 /* Host Section */
@@ -100,6 +107,7 @@
 .host-avatars-group {
     display: flex;
     margin-right: 8px;
+    min-width: 80px;
 }
 
 .host-avatar {
@@ -143,6 +151,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 /* Participants */
@@ -166,7 +175,8 @@
 
 /* Sidebar */
 .detail-sidebar {
-    width: 380px;
+    width: 360px;
+    flex-shrink: 0;
     position: sticky;
     top: 96px;
     /* 72px navbar + 24px gap */
@@ -192,18 +202,27 @@
     letter-spacing: -0.5px;
 }
 
+/* Mobile Bottom Bar hiding wrapper */
+.mobile-action-bar-wrapper {
+    display: none;
+}
+
 /* Responsive Overrides */
 @media (max-width: 1024px) {
     .detail-layout {
         flex-direction: column;
         gap: 0;
-        margin-top: -60px;
+        margin-top: -80px;
+        padding: 0;
     }
 
     .detail-main {
         max-width: 100%;
-        padding: 0 24px 100px;
-        background: transparent;
+        border-radius: 32px 32px 0 0;
+        border-right: none;
+        border-left: none;
+        padding: 32px 24px 100px;
+        /* Padding bottom for mobile bar */
     }
 
     .detail-sidebar {
@@ -217,6 +236,10 @@
     }
 
     .event-banner-wrapper {
-        height: 340px;
+        height: 380px;
+    }
+
+    .mobile-action-bar-wrapper {
+        display: block;
     }
 }
