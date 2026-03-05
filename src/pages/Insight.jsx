@@ -139,6 +139,13 @@ export default function Insight() {
                             </div>
                         </div>
                         <div className="operator-card">
+                            <div className="operator-logo">MG</div>
+                            <div>
+                                <div className="font-bold text-body">마을과집협동조합</div>
+                                <div className="text-xs text-secondary mt-1">지역 기반 커뮤니티 주택</div>
+                            </div>
+                        </div>
+                        <div className="operator-card">
                             <div className="operator-logo">DH</div>
                             <div>
                                 <div className="font-bold text-body">더함</div>
