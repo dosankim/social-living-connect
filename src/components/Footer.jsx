@@ -8,8 +8,9 @@ export default function Footer() {
             <div className="container footer-container">
                 <div className="footer-top">
                     <div className="footer-brand">
+                        {/* Logo PNG */}
                         <Link to="/" className="footer-logo">
-                            <img src="/images/ezipnet_logo_transparent.png" alt="이집넷" style={{ height: '40px', width: 'auto' }} />
+                            <img src="/images/ezipnet_logo.png" alt="이집넷" style={{ height: '40px', width: 'auto', mixBlendMode: 'multiply' }} />
                         </Link>
                         <p className="footer-description text-secondary text-sm mt-3">
                             새로운 소셜 리빙 네트워크<br />
