@@ -237,7 +237,10 @@ export default function PropertyDetail() {
                         <p className="location-desc">주변 편의시설을 확인해보세요</p>
                     </div>
                 </div>
-                <div className="property-map-placeholder">
+                <div
+                    className="property-map-placeholder"
+                    onClick={() => navigate('/map')}
+                >
                     <img src="/images/hero_modern_coliving.png" alt="map context" />
                     <div className="map-overlay-content">
                         <MapPin size={36} className="text-primary" />
