@@ -344,7 +344,7 @@ export default function Home() {
                         <div className="community-review-overlay">
                             <Quote size={24} className="mb-2 opacity-50 text-white" />
                             <p className="font-bold text-lg mb-1 text-white">루프탑 요가 & 명상 나이트</p>
-                            <p className="text-sm opacity-90 mb-4 text-white">"밤하늘을 보며 하는 요가는 잊지 못할 힐링이었어요. 다음에도 꼭 참여할 거예요!" - 참*자 A</p>
+                            <p className="text-sm opacity-90 mb-4 text-white">"밤하늘을 보며 하는 요가는 잊지 못할 힐링이었어요. 다음에도 꼭 참여할 거예요!" - 이지현</p>
                         </div>
                     </div>
 
@@ -353,7 +353,7 @@ export default function Home() {
                         <div className="community-review-overlay" style={{ background: 'linear-gradient(to top, rgba(45,106,79,0.95), transparent)' }}>
                             <Quote size={24} className="mb-2 opacity-50 text-white" />
                             <p className="font-bold text-lg mb-1 text-white">지역 청년 네트워킹 데이</p>
-                            <p className="text-sm opacity-90 mb-4 text-white">"비슷한 관심사를 가진 동네 친구들을 많이 사귈 수 있는 유익한 시간이었습니다." - 참*자 B</p>
+                            <p className="text-sm opacity-90 mb-4 text-white">"비슷한 관심사를 가진 동네 친구들을 많이 사귈 수 있는 유익한 시간이었습니다." - 박성민</p>
                         </div>
                     </div>
 
@@ -362,7 +362,7 @@ export default function Home() {
                         <div className="community-review-overlay" style={{ background: 'linear-gradient(to top, rgba(253,93,93,0.95), transparent)' }}>
                             <Quote size={24} className="mb-2 opacity-50 text-white" />
                             <p className="font-bold text-lg mb-1 text-white">봄맞이 가드닝 클래스</p>
-                            <p className="text-sm opacity-90 mb-4 text-white">"직접 흙을 만지고 식물을 심어보니 마음이 정화되는 기분이에요. 강사님도 너무 친절하셨어요." - 참*자 C</p>
+                            <p className="text-sm opacity-90 mb-4 text-white">"직접 흙을 만지고 식물을 심어보니 마음이 정화되는 기분이에요. 강사님도 너무 친절하셨어요." - 정수진</p>
                         </div>
                     </div>
                 </div>

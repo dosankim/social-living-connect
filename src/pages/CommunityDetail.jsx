@@ -157,14 +157,17 @@ export default function CommunityDetail() {
                         </div>
 
                         <div className="participants-grid">
-                            {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                                <div key={num} className="participant-item">
-                                    <div className="participant-avatar">
-                                        <img src={`https://i.pravatar.cc/150?img=${num * 4 + 10}`} alt={`Member ${num}`} />
+                            {['김지민', '이서준', '박서연', '최도윤', '정하은', '강시우', '조은우', '윤서아'].map((name, idx) => {
+                                const num = idx + 1;
+                                return (
+                                    <div key={num} className="participant-item">
+                                        <div className="participant-avatar">
+                                            <img src={`https://i.pravatar.cc/150?img=${num * 4 + 10}`} alt={`Member ${num}`} />
+                                        </div>
+                                        <span className="participant-name">{name}</span>
                                     </div>
-                                    <span className="participant-name">참*자</span>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
 
