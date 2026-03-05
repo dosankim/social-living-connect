@@ -79,17 +79,34 @@ export default function Insight() {
                         <h3 className="text-h4 font-bold mb-6">세대별 입주 현황</h3>
                         <p className="text-sm text-secondary mb-8">다양한 세대와 계층이 어우러져 살아가는 공간을 지향합니다.</p>
 
-                        <div style={{ display: 'flex', gap: '8px', height: '120px', alignItems: 'flex-end', marginBottom: '16px' }}>
-                            <div style={{ flex: 1, backgroundColor: 'var(--color-primary)', height: '70%', borderRadius: '4px 4px 0 0', display: 'flex', justifyContent: 'center', color: 'white', alignItems: 'flex-start', paddingTop: '8px', fontWeight: 'bold' }}>45%</div>
-                            <div style={{ flex: 1, backgroundColor: 'var(--color-secondary)', height: '35%', borderRadius: '4px 4px 0 0', display: 'flex', justifyContent: 'center', color: 'white', alignItems: 'flex-start', paddingTop: '8px', fontWeight: 'bold' }}>25%</div>
-                            <div style={{ flex: 1, backgroundColor: '#FCC419', height: '20%', borderRadius: '4px 4px 0 0', display: 'flex', justifyContent: 'center', color: 'black', alignItems: 'flex-start', paddingTop: '8px', fontWeight: 'bold' }}>15%</div>
-                            <div style={{ flex: 1, backgroundColor: 'var(--color-text-tertiary)', height: '15%', borderRadius: '4px 4px 0 0', display: 'flex', justifyContent: 'center', color: 'white', alignItems: 'flex-start', paddingTop: '8px', fontWeight: 'bold' }}>15%</div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '8px', textAlign: 'center', fontSize: '0.75rem', fontWeight: '600' }}>
-                            <div style={{ flex: 1 }}>청년/대학생</div>
-                            <div style={{ flex: 1 }}>신혼부부</div>
-                            <div style={{ flex: 1 }}>시니어</div>
-                            <div style={{ flex: 1 }}>예술인</div>
+                        <div className="v-bar-chart">
+                            {/* 청년/대학생 45% */}
+                            <div className="v-bar-col">
+                                <span className="v-bar-percent" style={{ bottom: '45%' }}>45%</span>
+                                <div className="v-bar-track-bottom" style={{ height: '45%', backgroundColor: 'var(--color-primary)' }}></div>
+                                <span className="v-bar-label">청년/대학생</span>
+                            </div>
+
+                            {/* 신혼부부 25% */}
+                            <div className="v-bar-col">
+                                <span className="v-bar-percent" style={{ bottom: '25%' }}>25%</span>
+                                <div className="v-bar-track-bottom" style={{ height: '25%', backgroundColor: 'var(--color-secondary)' }}></div>
+                                <span className="v-bar-label">신혼부부</span>
+                            </div>
+
+                            {/* 시니어 15% */}
+                            <div className="v-bar-col">
+                                <span className="v-bar-percent" style={{ bottom: '15%' }}>15%</span>
+                                <div className="v-bar-track-bottom" style={{ height: '15%', backgroundColor: '#FCC419' }}></div>
+                                <span className="v-bar-label">시니어</span>
+                            </div>
+
+                            {/* 예술인 15% */}
+                            <div className="v-bar-col">
+                                <span className="v-bar-percent" style={{ bottom: '15%' }}>15%</span>
+                                <div className="v-bar-track-bottom" style={{ height: '15%', backgroundColor: 'var(--color-text-tertiary)' }}></div>
+                                <span className="v-bar-label">예술인</span>
+                            </div>
                         </div>
                     </div>
                 </div>
