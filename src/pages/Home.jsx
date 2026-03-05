@@ -184,7 +184,7 @@ export default function Home() {
 
                 <div className="grid-3">
                     {MOCK_HOUSING.map(house => (
-                        <div key={house.id} className="card housing-card">
+                        <Link to={`/property/${house.id}`} key={house.id} className="card housing-card block hover:-translate-y-1 transition-transform duration-200">
                             <div className="housing-image-container">
                                 <div className="housing-badge badge badge-green">
                                     <CheckCircle2 size={14} /> 실시간 공실 확인
@@ -208,7 +208,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </section>

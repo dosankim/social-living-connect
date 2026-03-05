@@ -1,0 +1,133 @@
+.property-detail-page {
+    background-color: var(--color-background);
+    min-height: 100vh;
+    position: relative;
+    max-width: 600px;
+    /* Constrain for mobile-first feel like Zigbang */
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.property-top-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+    color: white;
+}
+
+.icon-btn {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Gallery */
+.property-gallery {
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.slide-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.slide-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Customizing Swiper for Property Detail */
+.property-slider .swiper-pagination-fraction {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    width: auto;
+    left: auto;
+    right: 16px;
+    bottom: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.property-slider .swiper-button-next,
+.property-slider .swiper-button-prev {
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+}
+
+.property-slider .swiper-button-next::after,
+.property-slider .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.property-slider .swiper-button-next:hover,
+.property-slider .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Sections */
+.property-section {
+    padding: 24px 0;
+}
+
+.border-b-section {
+    border-bottom: 8px solid #f4f5f7;
+}
+
+.property-tag {
+    background: #f1f3f5;
+    color: #495057;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Action Bar */
+.property-action-bar {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.action-btn {
+    letter-spacing: -0.5px;
+}
+
+.action-btn:active {
+    transform: scale(0.98);
+}
