@@ -9,7 +9,7 @@ import News from './pages/News';
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <Navbar />
       <div className="page-layout">
         <Routes>

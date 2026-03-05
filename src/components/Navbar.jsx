@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}>
         <div>
           <Link to="/" className="inline-flex items-center gap-2">
-            <img src={`/social-living-connect/images/ezipnet_logo.png`} alt="ezipnet logo" style={{ height: '64px', width: 'auto' }} />
+            <img src=\"/images/ezipnet_logo.png\" alt="ezipnet logo" style={{ height: '64px', width: 'auto' }} />
           </Link>
         </div>
         <div className="nav-links flex justify-center gap-8">
