@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link to="/insight" className={`nav-link ${isActive('/insight')}`}>현황</Link>
             <Link to="/news" className={`nav-link ${isActive('/news')}`}>소식</Link>
           </div>
-          <div className="flex items-center gap-4 justify-end">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'flex-end' }}>
             <button className="btn btn-ghost" aria-label="Search">
               <Search size={20} />
             </button>
