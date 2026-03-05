@@ -74,7 +74,7 @@ export default function AuthModal({ onClose }) {
 
                 {/* Logo PNG */}
                 <div className="auth-logo">
-                    <img src="/images/ezipnet_logo.png" alt="이집넷" className="auth-logo-img" />
+                    <img src="/images/ezipnet_logo_transparent.png" alt="이집넷" className="auth-logo-img" />
                 </div>
 
                 <h2 className="auth-title">{mode === 'login' ? '로그인' : '회원가입'}</h2>
