@@ -175,3 +175,34 @@
     color: var(--color-secondary);
     border: 2px solid var(--color-secondary);
 }
+
+/* =============================================
+   MOBILE RESPONSIVE - Insight Page
+   ============================================= */
+@media (max-width: 768px) {
+    .insight-hero {
+        padding: 40px 0;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .kpi-value {
+        font-size: 2.25rem;
+    }
+
+    .dashboard-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .chart-card {
+        padding: 20px;
+    }
+
+    .operator-grid {
+        grid-template-columns: 1fr;
+    }
+}

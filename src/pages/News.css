@@ -234,3 +234,57 @@
     color: white;
     border-color: var(--color-primary);
 }
+
+/* =============================================
+   MOBILE RESPONSIVE - News Page
+   ============================================= */
+@media (max-width: 768px) {
+    .news-header-premium {
+        padding: 60px 16px 80px;
+    }
+
+    .news-header-title {
+        font-size: 2rem;
+    }
+
+    .news-header-desc {
+        font-size: 1rem;
+    }
+
+    /* Interview: stack vertically */
+    .interview-premium-layout {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .interview-img-wrapper {
+        width: 100%;
+        height: 240px;
+    }
+
+    .interview-content-card {
+        width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        padding: 28px 20px;
+        border-radius: var(--radius-md);
+        margin-top: -24px;
+        z-index: 2;
+    }
+
+    .interview-title {
+        font-size: 1.5rem;
+    }
+
+    /* Newsletter → 1 col */
+    .newsletter-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .newsletter-img-container {
+        height: 180px;
+    }
+}

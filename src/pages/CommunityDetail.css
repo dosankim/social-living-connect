@@ -562,3 +562,28 @@
         box-shadow: 0 4px 16px rgba(253, 93, 93, 0.25);
     }
 }
+
+/* Extra small phone optimizations */
+@media (max-width: 480px) {
+    .event-banner-wrapper {
+        height: 280px;
+    }
+
+    .detail-main {
+        padding: 28px 16px 120px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .detail-title {
+        font-size: 1.375rem;
+    }
+
+    .event-badges {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, User, LogOut, ChevronDown } from 'lucide-react';
+import { Search, User, LogOut, ChevronDown, Menu, X as XIcon } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { signOut } from '../lib/auth';
 import AuthModal from './AuthModal';
+import './Navbar.css';
 
 export default function Navbar() {
   const location = useLocation();
   const { user } = useAuth();
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path ? 'active' : '';
 
@@ -21,73 +23,55 @@ export default function Navbar() {
   const displayName = user?.user_metadata?.name || user?.email?.split('@')[0] || '사용자';
   const avatarInitial = displayName[0]?.toUpperCase();
 
+  const navLinks = [
+    { to: '/map', label: '집 찾기' },
+    { to: '/community', label: '모임' },
+    { to: '/insight', label: '현황' },
+    { to: '/news', label: '소식' },
+  ];
+
   return (
     <>
       <nav className="navbar">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}>
-          <div>
-            <Link to="/" className="inline-flex items-center gap-2">
-              <img src="/images/ezipnet_logo.png" alt="ezipnet logo" style={{ height: '64px', width: 'auto' }} />
-            </Link>
-          </div>
-          <div className="nav-links flex justify-center gap-8">
-            <Link to="/map" className={`nav-link ${isActive('/map')}`}>집 찾기</Link>
-            <Link to="/community" className={`nav-link ${isActive('/community')}`}>모임</Link>
-            <Link to="/insight" className={`nav-link ${isActive('/insight')}`}>현황</Link>
-            <Link to="/news" className={`nav-link ${isActive('/news')}`}>소식</Link>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'flex-end' }}>
-            <button className="btn btn-ghost" aria-label="Search">
-              <Search size={20} />
-            </button>
+        <div className="navbar-inner container">
+          {/* Logo */}
+          <Link to="/" className="navbar-logo">
+            <img src="/images/ezipnet_logo.png" alt="ezipnet logo" style={{ height: '52px', width: 'auto' }} />
+          </Link>
 
+          {/* Desktop Nav Links */}
+          <div className="nav-links">
+            {navLinks.map(link => (
+              <Link key={link.to} to={link.to} className={`nav-link ${isActive(link.to)}`}>{link.label}</Link>
+            ))}
+          </div>
+
+          {/* Desktop Right */}
+          <div className="navbar-right">
             {user ? (
-              /* Logged-in: Show avatar + dropdown */
               <div style={{ position: 'relative' }}>
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
                   className="flex items-center gap-2 btn btn-ghost"
                   style={{ padding: '4px 8px', borderRadius: 'var(--radius-full)' }}
                 >
-                  <div style={{
-                    width: 36, height: 36, borderRadius: '50%',
-                    background: 'var(--color-primary)', color: 'white',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontWeight: 700, fontSize: '0.9rem'
-                  }}>
-                    {avatarInitial}
-                  </div>
-                  <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>{displayName}</span>
+                  <div className="navbar-avatar">{avatarInitial}</div>
+                  <span className="navbar-username">{displayName}</span>
                   <ChevronDown size={14} />
                 </button>
-
                 {showUserMenu && (
-                  <div style={{
-                    position: 'absolute', right: 0, top: 'calc(100% + 8px)',
-                    background: 'white', borderRadius: 'var(--radius-md)',
-                    border: '1px solid var(--color-border)',
-                    boxShadow: 'var(--shadow-md)', minWidth: '160px', zIndex: 100,
-                  }}>
+                  <div className="user-dropdown">
                     <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--color-border)' }}>
                       <p style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>로그인 중</p>
                       <p style={{ fontSize: '0.875rem', fontWeight: 600 }}>{displayName}</p>
                     </div>
-                    <button
-                      onClick={handleSignOut}
-                      className="flex items-center gap-2"
-                      style={{
-                        width: '100%', padding: '12px 16px', background: 'none',
-                        border: 'none', cursor: 'pointer', fontSize: '0.875rem',
-                        color: 'var(--color-text-secondary)', textAlign: 'left',
-                      }}
-                    >
+                    <button onClick={handleSignOut} className="user-dropdown-item">
                       <LogOut size={14} /> 로그아웃
                     </button>
                   </div>
                 )}
               </div>
             ) : (
-              /* Not logged in: Show login button */
               <button
                 className="btn btn-primary"
                 onClick={() => setShowAuthModal(true)}
@@ -96,8 +80,47 @@ export default function Navbar() {
                 로그인
               </button>
             )}
+
+            {/* Mobile Hamburger */}
+            <button
+              className="hamburger-btn"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="메뉴"
+            >
+              {mobileMenuOpen ? <XIcon size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu Drawer */}
+        {mobileMenuOpen && (
+          <div className="mobile-menu">
+            {navLinks.map(link => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`mobile-nav-link ${isActive(link.to)}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="mobile-menu-divider" />
+            {user ? (
+              <button onClick={() => { handleSignOut(); setMobileMenuOpen(false); }} className="mobile-nav-link" style={{ color: 'var(--color-primary)' }}>
+                로그아웃
+              </button>
+            ) : (
+              <button
+                className="btn btn-primary"
+                style={{ width: '100%', padding: '14px', fontSize: '1rem', marginTop: '8px' }}
+                onClick={() => { setShowAuthModal(true); setMobileMenuOpen(false); }}
+              >
+                로그인 / 회원가입
+              </button>
+            )}
+          </div>
+        )}
       </nav>
 
       {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} />}

@@ -360,3 +360,71 @@
     flex-direction: column;
     justify-content: flex-end;
 }
+
+/* =============================================
+   MOBILE RESPONSIVE - Home Page
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    /* Hero */
+    .hero-section {
+        padding: 48px 0 40px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-main-image {
+        height: 260px;
+        transform: none;
+    }
+
+    .hero-main-image:hover {
+        transform: none;
+    }
+
+    /* 3-col grids → 1 col */
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Campaign banner */
+    .campaign-slide {
+        padding: 28px 24px;
+        min-height: 140px;
+    }
+
+    /* Review cards — make them smaller on mobile */
+    .review-card {
+        min-width: 300px;
+        max-width: 300px;
+        padding: 24px;
+    }
+
+    /* Community reviews grid → 1 col */
+    .community-reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .community-review-item {
+        height: 240px;
+    }
+
+    /* Section title */
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

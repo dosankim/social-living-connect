@@ -302,9 +302,47 @@ ul {
   color: var(--color-primary);
 }
 
-/* Layout Page */
 .page-layout {
   min-height: calc(100vh - 72px);
   display: flex;
   flex-direction: column;
+}
+
+/* =============================================
+   GLOBAL MOBILE RESPONSIVE BREAKPOINTS
+   ============================================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .text-h1 {
+    font-size: 1.75rem;
+  }
+
+  .text-h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-h3 {
+    font-size: 1.25rem;
+  }
+
+  .text-h4 {
+    font-size: 1.125rem;
+  }
+
+  /* Hide desktop nav links, show hamburger (handled in Navbar.jsx) */
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    height: 60px;
+  }
+
+  .page-layout {
+    min-height: calc(100vh - 60px);
+  }
 }

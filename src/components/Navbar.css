@@ -1,0 +1,151 @@
+/* Navbar layout */
+.navbar-inner {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.navbar-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.navbar-username {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    min-width: 160px;
+    z-index: 200;
+}
+
+.user-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-align: left;
+}
+
+.user-dropdown-item:hover {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--color-text-primary);
+}
+
+/* Mobile Menu Drawer */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid var(--color-border);
+    padding: 16px;
+    background: white;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 14px 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link.active {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.mobile-menu-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 8px 0;
+}
+
+/* ===== Mobile Breakpoints ===== */
+@media (max-width: 768px) {
+    .navbar-inner {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    /* Hide desktop nav, show hamburger */
+    .nav-links {
+        display: none !important;
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    /* Hide username text on small screens */
+    .navbar-username {
+        display: none;
+    }
+
+    /* Hide desktop login button on mobile (hamburger handles it) */
+    .navbar-right>.btn-primary {
+        display: none;
+    }
+}
