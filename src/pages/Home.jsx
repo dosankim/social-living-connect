@@ -82,7 +82,7 @@ export default function Home() {
                         <p className="hero-subtitle mb-0">이집넷이 만드는 새로운 소셜 리빙 네트워크에 합류하세요.<br />당신의 삶에 꼭 맞는 이웃과 공간을 연결합니다.</p>
                     </div>
                     <div className="hero-image-wrapper">
-                        <img src="/images/hero_modern_coliving.png" alt="Modern Co-living Space" className="hero-main-image" />
+                        <img src={`/social-living-connect/images/hero_modern_coliving.png`} alt="Modern Co-living Space" className="hero-main-image" />
                     </div>
                 </div>
             </section>
@@ -340,7 +340,7 @@ export default function Home() {
 
                 <div className="community-reviews-grid">
                     <div className="community-review-item">
-                        <img src="/images/event_yoga.png" alt="Yoga Event" className="community-review-img" />
+                        <img src={`/social-living-connect/images/event_yoga.png`} alt="Yoga Event" className="community-review-img" />
                         <div className="community-review-overlay">
                             <Quote size={24} className="mb-2 opacity-50 text-white" />
                             <p className="font-bold text-lg mb-1 text-white">루프탑 요가 & 명상 나이트</p>
@@ -349,7 +349,7 @@ export default function Home() {
                     </div>
 
                     <div className="community-review-item">
-                        <img src="/images/event_networking.png" alt="Networking Event" className="community-review-img" />
+                        <img src={`/social-living-connect/images/event_networking.png`} alt="Networking Event" className="community-review-img" />
                         <div className="community-review-overlay" style={{ background: 'linear-gradient(to top, rgba(45,106,79,0.95), transparent)' }}>
                             <Quote size={24} className="mb-2 opacity-50 text-white" />
                             <p className="font-bold text-lg mb-1 text-white">지역 청년 네트워킹 데이</p>
@@ -358,7 +358,7 @@ export default function Home() {
                     </div>
 
                     <div className="community-review-item">
-                        <img src="/images/event_gardening.png" alt="Gardening Event" className="community-review-img" />
+                        <img src={`/social-living-connect/images/event_gardening.png`} alt="Gardening Event" className="community-review-img" />
                         <div className="community-review-overlay" style={{ background: 'linear-gradient(to top, rgba(253,93,93,0.95), transparent)' }}>
                             <Quote size={24} className="mb-2 opacity-50 text-white" />
                             <p className="font-bold text-lg mb-1 text-white">봄맞이 가드닝 클래스</p>

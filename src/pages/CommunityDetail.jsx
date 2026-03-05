@@ -7,7 +7,7 @@ export default function CommunityDetail() {
         <div className="community-detail-page">
             {/* Banner Image */}
             <img
-                src="/images/event_banner_craft.png"
+                src={`/social-living-connect/images/event_banner_craft.png`}
                 alt="Event Banner"
                 className="event-banner"
             />

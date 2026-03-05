@@ -34,7 +34,7 @@ export default function News() {
                     <div className="interview-premium-layout">
                         <div className="interview-img-wrapper">
                             <img
-                                src="/images/news_interview_1.png"
+                                src={`/social-living-connect/images/news_interview_1.png`}
                                 alt="이은지 입주자 인터뷰"
                                 className="interview-img"
                             />
@@ -79,7 +79,7 @@ export default function News() {
                         {[1, 2, 3].map((num) => (
                             <div key={num} className="newsletter-card-premium cursor-pointer">
                                 <div className="newsletter-img-container">
-                                    <img src="/images/news_newsletter_1.png" alt="Newsletter Cover" className="newsletter-img" />
+                                    <img src={`/social-living-connect/images/news_newsletter_1.png`} alt="Newsletter Cover" className="newsletter-img" />
                                     <div className="newsletter-vol-badge">
                                         Vol. {24 - num}
                                     </div>
