@@ -35,3 +35,110 @@
     color: var(--color-primary);
     border-bottom-color: var(--color-primary);
 }
+
+/* Gathering List */
+.gathering-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+}
+
+.gathering-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.gathering-card {
+    display: flex;
+    background: #fff;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gathering-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.gathering-card-image-wrapper {
+    width: 140px;
+    min-height: 160px;
+    flex-shrink: 0;
+}
+
+.gathering-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gathering-card-body {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.gathering-card-tags {
+    display: flex;
+    gap: 6px;
+}
+
+.gathering-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.gathering-card-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.gathering-card-stats {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.gathering-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+    .gathering-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gathering-card-image-wrapper {
+        width: 120px;
+        min-height: 140px;
+    }
+}

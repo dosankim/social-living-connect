@@ -38,11 +38,12 @@ export default function AuthModal({ onClose }) {
         setSuccess('');
         setLoading(true);
         try {
+            const cleanEmail = email.trim();
             if (mode === 'login') {
-                await signIn(email, password);
+                await signIn(cleanEmail, password);
                 onClose();
             } else {
-                await signUp(email, password, name);
+                await signUp(cleanEmail, password, name);
                 setSuccess('가입 확인 이메일을 보냈습니다. 이메일을 확인해주세요!');
             }
         } catch (err) {
