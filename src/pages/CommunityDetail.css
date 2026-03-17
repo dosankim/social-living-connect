@@ -472,7 +472,7 @@
 }
 
 /* Mobile Action Bar */
-.mobile-action-bar-wrapper {
+.community-detail-page .mobile-action-bar-wrapper {
     display: none;
 }
 
@@ -505,11 +505,11 @@
         height: 400px;
     }
 
-    .mobile-action-bar-wrapper {
+    .community-detail-page .mobile-action-bar-wrapper {
         display: block;
     }
 
-    .mobile-action-bar {
+    .community-detail-page .mobile-action-bar {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -521,20 +521,20 @@
         z-index: 50;
     }
 
-    .mobile-bar-inner {
+    .community-detail-page .mobile-bar-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 24px;
     }
 
-    .mobile-price-col {
+    .community-detail-page .mobile-price-col {
         display: flex;
         flex-direction: column;
         gap: 4px;
     }
 
-    .mobile-original-price {
+    .community-detail-page .mobile-original-price {
         font-size: 0.875rem;
         color: var(--color-primary);
         font-weight: 700;
@@ -542,19 +542,19 @@
         opacity: 0.7;
     }
 
-    .mobile-discount-price {
+    .community-detail-page .mobile-discount-price {
         font-size: 1.5rem;
         font-weight: 800;
         color: var(--color-text-primary);
         line-height: 1;
     }
 
-    .unit {
+    .community-detail-page .unit {
         font-size: 1rem;
         font-weight: 400;
     }
 
-    .mobile-apply-btn {
+    .community-detail-page .mobile-apply-btn {
         flex: 1;
         padding: 16px;
         font-size: 1.125rem;
