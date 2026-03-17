@@ -1,6 +1,7 @@
 .gathering-detail-page {
     background-color: var(--color-background);
     min-height: 100vh;
+    width: 100%;
     padding-bottom: 90px; /* Space for action bar */
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     position: relative;
@@ -127,16 +128,9 @@
 
 /* Content Area */
 .gathering-content-area {
-    background-color: #f8f9fa; /* Light gray back for the feed and sections */
+    background-color: #fff;
     min-height: 50vh;
-}
-
-.tab-pane-home,
-.tab-pane-schedule,
-.tab-pane-gallery {
-    background: #fff;
     width: 100%;
-    min-height: 50vh;
 }
 
 .gathering-section {
